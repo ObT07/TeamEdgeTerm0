@@ -17,16 +17,14 @@ console.log("------------------- Challenge 1 -------------------")
     Write conditional statements that print out whether you can drive in your city. */
 
 
+let prompt = READLINE.question("Enter your age \n");
 
 
-
-
-
-
-
-
-
-
+if (prompt < 16) {
+    console.log("You cant drive");
+} else {
+    console.log("You can drive");
+}
 
 /* -------------------------------------------- */
 
@@ -36,13 +34,15 @@ console.log("------------------- Challenge 2 -------------------")
     Write conditional statements that checks which is the highest and prints the highest score. 
     Hint: Create three variables and assign them random scores. */
 
+let score1 = READLINE.question("Enter your score \n");
+let score2 = READLINE.question("Enter your score \n");
+let score3 = 0;
 
-
-
-
-
-
-
+if (score1 > score3 && score1 > score2) {
+    console.log("Higest score is score 1");
+} else if (score2 > score1) {
+    console.log("Highest score is score 2");
+}
 
 
 
@@ -63,18 +63,16 @@ console.log("------------------- Challenge 3 -------------------")
    Snowing: Wear gloves and a scarf */
 
 //Here's a variable to get you started:
-let weather = `rainy`;
+let weather1 = READLINE.question("What is the weather looking like?(rainy, sunny, snowing) \n");
 
 
-
-
-
-
-
-
-
-
-
+if (weather1 == `rainy`) {
+    console.log("BRING AN UMBRELLA");
+} else if (weather1 == `sunny`) {
+    console.log("Wear a hat and sunglasses :)");
+} else if (weather1 == 'snowing') {
+    console.log("Wear gloves and a scarf");
+}
 
 
 //Tip: Try changing the value of the weather variable to test your other conditions.
@@ -91,15 +89,15 @@ let weather = `rainy`;
    Hint: You will need another variable to keep track of the temperature.
 */
 
+let temp = READLINE.question("Enter the temperature: \n");
 
-
-
-
-
-
-
-
-
+if (temp <= 100) {
+    console.log("Wear shirt and shorts");
+} else if (temp < 70) {
+    console.log("Bring a jacket");
+} else if (temp < 40) {
+    console.log("Bring warm jacket");
+}
 
 /* -------------------------------------------- */
 
@@ -110,15 +108,25 @@ console.log("------------------- Challenge 4 -------------------")
     and print out the corresponding day of the week. 
     Make sure to add a statement that accounts of any numbers out of range! */
 
+let day = READLINE.question("Whay day of the week is it(Enter a number from 1-7): \n");
 
-
-
-
-
-
-
-
-
+if (day == 1) {
+    console.log("Monday");
+} else if (day == 2) {
+    console.log("Tuesday");
+} else if (day == 3) {
+    console.log("Wensday");
+} else if (day == 4) {
+    console.log("Thursday");
+} else if (day == 5) {
+    console.log("Friday");
+} else if (day == 6) {
+    console.log("Saturday");
+} else if (day == 7) {
+    console.log("Sunday");
+} else {
+    console.log("Invalid date");
+}
 
 /* -------------------------------------------- */
 

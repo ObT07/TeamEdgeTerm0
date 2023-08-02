@@ -47,10 +47,15 @@ console.log(object)
 
 //*********************************  MY OBJECT *************************** */
 
-
-
-
-
+const person1 = {
+    name: "Obafemi",
+    isTired: true,
+    age: 16,
+    interests: ["Technology", "Photography", "Guitar/Music"],
+    nameSaying: function() {
+        return `${this.name} is my name`;
+    }
+};
 
 //************************************************************************* */
 
@@ -60,9 +65,13 @@ console.log("------------------- CHALLENGE 2 : MODIFY   -------------------")
 
 //-->TODO: Log your object you created above
 
+let myName = person1.name;
+console.log(myName);
 
 //-->TODO: Update the object you just created  by adding new properties and values, including array elements, in this section.
 
+person1.isTired = false;
+console.log(person1.isTired);
 
 //-->TODO: Log your object again and observe changes
 
@@ -73,6 +82,13 @@ console.log("------------------- CHALLENGE 3 : METHOD   -------------------")
 //          Make your methods update your variables, or add a random number to an array, etc.
 
 
+console.log(person1.nameSaying());
+
 console.log("------------------- CHALLENGE 4 : LITERALLY   -------------------")
 
 //-->TODO: Put it all together using a string literal to tell the story of your object!
+let age = person1.age;
+let interests = person1.interests;
+let myNamePhrase = person1.nameSaying();
+
+console.log(`${myName}, and I am ${age} years old. I like ${interests}`);

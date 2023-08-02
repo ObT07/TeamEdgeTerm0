@@ -51,8 +51,14 @@ let items = ["pencil" , "eraser" , "mirror" , "comb" , "spoon" , "key" , "earrin
 
 //-->TODO: Use a while loop to search the contents of an array for the key! If it exists, print "found the key!"
 
-
-
+let count = 0;
+while (count < items.length) {
+  if (items.includes("key")) {
+    console.log("Found the Key!")
+    break;
+  }
+  count++;
+}
 
 
 console.log("------------------- CHALLENGE 3 : BUGGIN   -------------------")
@@ -64,11 +70,11 @@ console.log("------------------- CHALLENGE 3 : BUGGIN   -------------------")
 
 function evenNumbersToFifty(){
 
-    let num = 50
-    while(num <50){
+    let num =0
+    while(num <= 50){
 
         console.log("number: " + num)
-
+        num+=2;
     }
 }
 evenNumbersToFifty()
@@ -92,19 +98,23 @@ evenNumbersToFifty()
 function pattern(){
 
     let index = 0 
+    let index2 = 5
     let array =[]
     
-    while(index <= 5 ){
-      
+    while(index <= 5){
         array.push(index)
-    
+        console.log(array)
        // console.log(array)
         index++
     }
-
+    while(index <= 10){
+      array.pop(index)
+      console.log(array)
+     // console.log(array)
+     index++;
+  }
 }
 pattern()
-
 
 console.log("------------------- CHALLENGE 4 : MATH QUIZ   -------------------")
 
@@ -116,6 +126,31 @@ console.log("------------------- CHALLENGE 4 : MATH QUIZ   -------------------")
 
 let isCorrect = false
 
+let i = 1
+let math1 = Math.random();
+let math2 = Math.random();
+
+while (i > 0) {
+  let prompt = READLINE.question("Enter a number from 0-100\n");
+  let prompt2 = READLINE.question("Enter a number from 0-100\n");
+  if (prompt == math1 || prompt2 == math2) {
+    console.log("CONGRATULATIONS");
+  } else {
+    console.log("Wrong, try again");
+  }
+
+  let prompt3 = READLINE.question("Exit(Y/N)? \n")
+
+  if (prompt3 == 'N') {
+    continue;
+  } else if (prompt3 == 'Y') {
+    break;
+  } else {
+    console.log("Enter a valid operation");
+  }
+
+  i++
+}
 
 console.log("------------------- CHALLENGE 5 : WHAT AM I?   -------------------")
 
@@ -123,31 +158,45 @@ console.log("------------------- CHALLENGE 5 : WHAT AM I?   -------------------"
 //         You are given to starter functions and a loop to get started! 
 //         Notice how one function calls the other and uses the returned value as the input. This is called Recursion! 
 
-let keepAsking = false
-while(keepAsking){
+let keepAsking = true;
 
- //response(promptUser())
+while(keepAsking){
+  let prompt = READLINE.question("Would you like to continue(Y/N)\n");
+  if (prompt == "N") {
+    break;
+  }
+  console.log(response(promptUser()))
 }
 
+
 function promptUser(){
-
-  
-
+  let prompt = READLINE.question("What are you\n");
+  return prompt;
 }
 
 function response(response){
-
-  
-
+  return `I know you are a ${response}, but what am I?`;
 }
+
 
 //-->TODO: Challenge! write a secret word to break out of the loop!
 
 
+// Make a function that takes number and doubles it
+// Use a while loop that will keep doubling the number
 
+ const doubleIt = (num) => {
+    return Math.pow(num, 2);
+ }
 
+ let number = parseInt(READLINE.question("Enter a number\n"));
+ let doTheLoop = "Y";
 
-
+while (doTheLoop == "Y") {
+  number = doubleIt(number);
+  console.log(number);
+  doTheLoop = READLINE.question("Would you like to double it again(Y/N)\n");
+}
 
 //------------ Helper function, do not mess with this part below ---------------??
 

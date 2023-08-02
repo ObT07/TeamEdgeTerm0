@@ -29,7 +29,11 @@ for(let i = 0 ; i <=10 ; i++) {
 
 //-->TODO: Write a loop that prints a happy birthday message for every year you have been alive.
 
+for(let i = 0 ; i <=15 ; i++) {
 
+    console.log("Happy Birthday " + i + " years old")
+   
+   }
 
 console.log("------------------- CHALLENGE 2 : ITERATOR ----------------------")
 
@@ -43,7 +47,11 @@ for(let i = 0 ; i< colors.length; i ++) {
 }
 
 //-->TODO: Declare an array with at least 10 animals. You provide the animals.
-let animals = []
+let animals = ["dog", "cat", "butter dog", "dog with the butter on it", "zebra", "cart", "giraffe", "bear", "mouse", "bird"];
+
+for (let i = 0; i < animals.length; i++) {
+    console.log(`Animals ${animals[i]}`);
+}
 
 //-->TODO: Log all the animals in the array with a for loop. 
 
@@ -51,7 +59,7 @@ let animals = []
 console.log("------------------- CHALLENGE 3 : DEBUG -------------------------")
 
 //-->TODO: fix this code so it no longer logs the last item as undefined...
-for(let i = 0 ; i<= colors.length; i ++) {
+for(let i = 0 ; i < colors.length; i ++) {
 
     console.log("The color is: " + colors[i])
 }
@@ -59,23 +67,22 @@ for(let i = 0 ; i<= colors.length; i ++) {
 //-->TODO: fix this code! What could be wrong? It should print out the 5 times tables all the way to 12.
 
 console.log("Behold...the 5 times table: ")
-for(let i = 0 ; i > 12;  i++) {
-
-    console.log(` 5 x ${i} =  ` + i*5 )
-     
+for(let i = 0; i <= 5;  i++) {
+    console.log(`5 x ${i} =  ${i * 5}`);
 }
 
 //-->TODO: This function takes in an array, but needs to log the items inside. What's missing?
+// let array = [4, 5, 6, 7];
 
 function logArray(array){
 
-    for(let i = 0 ; i<array.length ; i++){
+    for(let i = 0 ; i < array.length ; i++){
 
-        console.log(i)
+        console.log(array[i])
     }
 }
 
- 
+ logArray(["One", "Two", "Three"]);
 
 console.log("------------------- CHALLENGE 4 : EVEN COUNTDOWN ------------------")
 
@@ -94,6 +101,17 @@ if(random % 2 == 0){
 
 //-->TODO: Write a function that counts BACKWARDS from 100 and logs only odd numbers
 
+const countBackwards = () => {
+    for (let i = 100; i > 0; i--) {
+        if (i % 2 != 0) {
+            console.log(i);
+        } else {
+            continue;
+        }
+    }
+}
+
+countBackwards();
 
 //-->TODO: Write a function that counts BACKWARDS from the given random number and logs only even numbers
 
@@ -112,16 +130,35 @@ if(colors.includes(color)){
 
 //-->TODO Declare an array of any strings you  want: cities, friends, movies, etc.
 
+let myCities = ["nyc", "detroit", "miami"];
 
 //-->TODO Prompt the user to "Guess" if an element is present. Store their response in a varaible
 
-
 //-->TODO Write function to prompt the user and see if the element is present. If so, print CONGRATULATIONS!
 
+const guessAnalysis = () => {
+    // for (let i = 0; i < myCities.length; i++) {
+    //     let prompt = READLINE.question("Guess: \n");
+
+    //     if (prompt == myCities[0] || prompt == myCities[1] || prompt == myCities[2]) {
+    //         console.log("CONGRATULATIONS")
+    //     } else {
+    //         console.log(`Wrong, guess again: \n`)
+    //     }
+    // }
+
+    let input = READLINE.question("Guess a city: \n");
+
+    if (myCities.includes(input)) {
+        console.log("Congrats");
+     } else {
+        console.log("Wrong");
+    }
+}
 
 //-->TODO Call your function.
 
-
+guessAnalysis();
 
 console.log("------------------- CHALLENGE 6 : Nested ------------------")
 
@@ -145,6 +182,11 @@ for(let i = 0; i < colors.length ; i++){
 
 //-->TODO Write a function that logs every letter in a sentence that a user enters.
 
+let sentence = READLINE.question("Enter a sentence\n");
+
+for(let i = 0; i < sentence.length; i++) {
+    console.log(sentence[i])
+}
 
 //-->CHALLENGE Let the user know which word is the shortest one!
 

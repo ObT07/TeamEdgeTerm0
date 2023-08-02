@@ -20,30 +20,70 @@ const READLINE = require("readline-sync");
 
 // **** Challenge 1: Problem 1 ****
 // Write a function called printMessage() that prints any message you want.
+function printMessage() {
+	console.log("Hello World");
+}
 
+printMessage();
 
 // **** Challenge 1: Problem 2 ****
 // Write a function called printFiveMessages() that calls printMessage() five times.
 
+function printFiveMessages() {
+	printMessage();
+	printMessage();
+	printMessage();
+	printMessage();
+	printMessage();
+}
+
+printFiveMessages();
 
 // **** Challenge 1: Problem 3 ****
 // Write a function called getUserInput() that asks the user if they'd like to print your message
 // once or five times. Then call one of the two functions above based on what the user decides.
 
+function getUserInput() {
+	let input = READLINE.question("Do you want 1 or 5 messages: \n")
+	
+	if (input == 1) {
+		printMessage();
+	} else if (input == 5) {
+		printFiveMessages();
+	}
+}
+
+getUserInput();
 
 // **** Challenge 1: Problem 4 ****
 // Write a function called printGreeting() that prints a greeting message to the user.
 
+function printGreeting() {
+	console.log("Welcome!!");
+}
+
+printGreeting();
 
 // **** Challenge 1: Problem 5 ****
 // Write a function called printClosing() that prints a goodbye message to the user.
 
+function printClosing() {
+	console.log("Goodbye");
+}
+
+printClosing();
 
 // **** Challenge 1: Problem 6 ****
 // Write a function called run() that greets the user, asks them for input, and sends a goodbye message.
 // Remember! Use the functions that you've already made. Don't hardcode anything!
 
+function run() {
+	printGreeting();
+	let greetingInp = READLINE.question("")
+	printClosing();
+}
 
+run();
 
 /* -------------------------------------------- 
 
@@ -66,11 +106,12 @@ However, if the two values are the same, the funciton will return double their s
 
 -------------------------------------------- */
 
+function sumDouble(num1, num2) {
+	return num1 + num2;
+}
 
-
-
-
-
+let sum = sumDouble(4, 4);
+console.log(sum);
 
 // Make sure to test your code! Write a few function calls to make sure your code works!
 
@@ -87,7 +128,18 @@ Write a function called makes10 that takes two numbers, a and b, and returns tru
 
 -------------------------------------------- */
 
+function makes10(a, b) {
+	if (a == 10 || b == 10) {
+		return true;
+	} else if (a + b == 10) {
+		return true;
+	} else {
+		return false
+	}
+}
 
+let sol = makes10(9, 10);
+console.log(sol);
 
 
 
@@ -112,7 +164,24 @@ it should be "10:00" and weekends it should be "off".
 
 -------------------------------------------- */
 
+function alarmClock(day, vacation) {
+	if (vacation == true) {
+		if (day == 1 || day == 2 || day == 3 || day == 4 || day == 5) {
+			return "10:00";
+		} else {
+			return "off";
+		}
+	} else {
+		if (day == 1 || day == 2 || day == 3 || day == 4 || day == 5) {
+			return "7:00";
+		} else {
+			return "10:00";
+		}
+	}	
+}
 
+let week = alarmClock(6, false);
+console.log(week);
 
 
 
@@ -137,9 +206,20 @@ If speed is 81 or more, the result is 2.
 
 -------------------------------------------- */
 
+function speedTicket(speed) {
+	if (speed <= 60) {
+		return 0;
+	} else if (speed >= 61 && speed <= 80) {
+		return 1;
+	} else if (speed >= 81) {
+		return 2;
+	} else {
+		return undefined;
+	}
+}
 
-
-
+let ticket = speedTicket(70);
+console.log(ticket);
 
 
 

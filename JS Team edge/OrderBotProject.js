@@ -27,6 +27,13 @@ After this program finishes running, it should output a specific total for each 
 
 const READLINE = require("readline-sync");
 
+let pOneTotal;
+let pTwoTotal;
+let pThreeTotal;
+let pOnePostTaxTotal;
+let pTwoPostTaxTotal;
+let pThreePostTaxTotal;
+let total;
 /* -------------------------------------------- 
 
 Part 1:
@@ -40,17 +47,14 @@ Remember! Functions are meant to be reusable, so write a function that will work
 
 -------------------------------------------- */
 
+const calculateTotalPrice = () => {
+	let prompt = Number(READLINE.question("What was the price of your first meal($):\n"));
+	let prompt2 = Number(READLINE.question("What was the price of your drink($):\n"));
+	let totalPrice = prompt + prompt2;
+	return totalPrice;
+}	
 
-
-
-
-
-
-
-
-
-
-
+let cost = calculateTotalPrice();
 /* -------------------------------------------- 
 
 Part 2:
@@ -66,16 +70,24 @@ Remember! Functions are meant to be reusable, so write a function that will work
 -------------------------------------------- */
 
 
-
-
-
-
-
-
-
-
-
-
+const calculatePriceWithTaxTip = (cost) => {
+	let costOfItemsTax = (cost * 0.06) + cost;
+	console.log(`${costOfItemsTax} is your total price with tax`);
+	let prompt = READLINE.question("Would you like to add a tip(Y or N)?\n");
+	let priceWithTip = 0;
+	
+	if (prompt == 'Y') {
+		let prompt2 = Number(READLINE.question("How much of a tip would you like to add\n"));
+		let tip = Number(prompt2 + costOfItemsTax);
+		let priceWithTip = tip + costOfItemsTax;
+	} else if (prompt == 'N') {
+		console.log(`Ok your total order is ${costOfItemsTax}`);
+	} else {
+		console.log("Enter a valid operation");
+	}
+	return priceWithTip;
+	return costOfItemsTax;
+}
 /* -------------------------------------------- 
 
 Part 3:
@@ -93,12 +105,21 @@ Remember! Functions are meant to be reusable, so write a function that will work
 
 
 
+const groupOrder = () => {
+	// List name then order
+	pOneTotal = calculateTotalPrice();
+	pOnePostTaxTotal = calculatePriceWithTaxTip();
+	pTwoTotal = calculateTotalPrice();
+	pOnePostTaxTotal = calculatePriceWithTaxTip();
+	pThreeTotal = calculateTotalPrice();
+	pThreePostTaxTotal = calculatePriceWithTaxTip();
+	return pOnePostTaxTotal + pOnePostTaxTotal + pThreePostTaxTotal;
+}
 
+console.log(groupOrder());
 
-
-
-
-
+// groupOrder("Dave", "Bob", "Frank");
+// console.log(total + " is the total receipt")
 
 /* -------------------------------------------- 
 
